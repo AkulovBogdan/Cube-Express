@@ -1,0 +1,23 @@
+<%- include('./parts/head.ejs', {title: 'Error'}) %>
+<body>
+<div class="bg full-screen">
+    <div class="container mt-5">
+        <div class="row pt-2">
+            <div class="offset-md-4 col-4 offset-md-4">
+                <h1 class="text-center"><%= message %></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-md-4 col-4 offset-md-4">
+                <h2 class="text-center"><%= error.status %></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-md-1 col-10 offset-md-1">
+                <pre><%= error.stack %></pre>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('./parts/foot.ejs') %>
+

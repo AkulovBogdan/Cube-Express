@@ -1,0 +1,45 @@
+<%- include('./parts/head.ejs', {title: 'Registration'}) %>
+<body>
+<div class="bg full-screen">
+    <div class="container mt-3 pt-5 rounded">
+        <form id="target" action="/registration" method="post">
+            <h1 class="text-center pb-3">Registration</h1>
+            <div class="form-group row">
+                <label for="input-login" class="offset-4 col-1 col-form-label">Login</label>
+                <div class="col-4">
+                    <input type="text" class="form-control form-control-success" name="login" id="input-login" maxlength="20" placeholder="Login" required value="<%= login %>">
+                    <div class="form-control-feedback text-danger"><%= errorMessageLogin %></div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="input-name" class="offset-4 col-1 col-form-label">Name</label>
+                <div class="col-4">
+                    <input type="text" name="name" class="form-control form-control-warning" id="input-name" placeholder="Name" maxlength="20" required value="<%= name %>">
+                    <div class="form-control-feedback text-danger"><%= errorMessageName %></div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="pass" class="offset-4 col-1 col-form-label">Password</label>
+                <div class="col-4">
+                    <input type="password" name="password" class="form-control form-control-danger" id="pass" maxlength="20" placeholder="Password" required>
+                    <div class="form-control-feedback text-danger"><%= errorMessagePassword %></div>
+                </div>
+            </div>
+            <div class="form-group row mb-3">
+                <label for="repeat-pass" class="offset-4 col-1 col-form-label">Repeat password</label>
+                <div class="col-4">
+                    <input type="password" name="repeatPassword" class="form-control form-control-danger" id="repeat-pass" maxlength="20" placeholder="Repeat password" required>
+                    <div class="form-control-feedback text-danger"><%= errorMessagePassword %></div>
+                </div>
+            </div>
+            <div class="row pb-2">
+                <button class="offset-4 btn btn-block btn-outline-primary col-5" type="submit">Register</button>
+            </div>
+        </form>
+        <div class="row">
+            <div class="offset-4"></div>
+            <a style="color:white" class="col-5 mb-2 btn btn-success btn-block" href="/auth">Back to log in</a>
+        </div>
+    </div>
+</div>
+<%- include('./parts/foot.ejs') %>
